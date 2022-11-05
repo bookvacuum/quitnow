@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 
-// contracts/BuyMeACoffee.sol
+// contracts/sendEth.sol
 pragma solidity ^0.8.0;
 
 // Switch this to your own contract address once deployed, for bookkeeping!
@@ -50,7 +50,7 @@ contract SendEth {
      */
     function sendEth(string memory _name, string memory _message) public payable {
         // Must accept more than 0 ETH for a coffee.
-        require(msg.value > 0, "cant send eth for free!");
+        require(msg.value > 0, "cant send message for free!");
 
         // Add the memo to storage!
         memos.push(Memo(
