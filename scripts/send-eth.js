@@ -45,16 +45,16 @@ async function main() {
 
   // Buy the owner a few coffees.
   const tip = {value: hre.ethers.utils.parseEther("1")};
-  await sendEth.connect(tipper).sendEth("Carolina", "You're the best!", tip);
-  await sendEth.connect(tipper2).sendEth("Vitto", "Amazing teacher", tip);
-  await sendEth.connect(tipper3).sendEth("Kay", "I love my Proof of Knowledge", tip);
+  await sendEthContract.connect(tipper).sendEth("Sun", "Thanks for showing me this great use case!", tip);
+  await sendEthContract.connect(tipper2).sendEth("Jerry", "Congrats on your quitting!", tip);
+  await sendEthContract.connect(tipper3).sendEth("Eileen", "Take care of yourself! ", tip);
 
   // Check balances after the coffee purchase.
-  console.log("== bought coffee ==");
+  console.log("== sent eth ==");
   await printBalances(addresses);
 
   // Withdraw.
-  await sendEth.connect(owner).withdrawTips();
+  await sendEthContract.connect(owner).withdrawTips();
 
   // Check balances after withdrawal.
   console.log("== withdrawTips ==");
@@ -62,7 +62,7 @@ async function main() {
 
   // Check out the memos.
   console.log("== memos ==");
-  const memos = await sendEth.getMemos();
+  const memos = await sendEthContract.getMemos();
   printMemos(memos);
 }
 
