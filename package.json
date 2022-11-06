@@ -27,6 +27,7 @@
     "hardhat": "^2.12.2"
   },
   "dependencies": {
+    "@worldcoin/id": "^0.9.2",
     "dotenv": "^16.0.3"
   }
 }
